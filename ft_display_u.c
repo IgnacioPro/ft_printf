@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 12:52:52 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/06 14:14:40 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/07 16:27:17 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void    ft_display_u(printf_s *format, int nb)
 	int			space;
 	int			zero;
 	unsigned	r;
+	char *numero;
 
 	r = nb;
 	nb = r;
-	len = ft_strlen(ft_itoa(r));
+	numero = ft_itoa(r);
+	len = ft_strlen(numero);
 	space = format->width - ((format->precision <= len) ? len : format->precision);
 	zero = format->precision - len;
 	space += (nb == 0 && format->precision == 0 &&
@@ -32,10 +34,12 @@ void    ft_display_u(printf_s *format, int nb)
 			(format->dot == '.' && format->precision >= 0)) ? " " : "0", 1);
 	while (--zero >= 0)
 		format->strlen += write(1, "0", 1);
-	(nb == 0 && format->precision == 0 && format->dot == '.') ? 0 : ft_print_number(nb, 1);
+	if (!(nb == 0 && format->precision == 0 && format->dot == '.'))
+		ft_print_number(nb, 1);
 	while (space-- >= 0)
 		format->strlen += write(1, " ", 1);
 	format->strlen += len;
-	if (nb == 0 && format->precision == 0 && format->dot == '.' && format->width >= 0)
-		--format->strlen;
+	if (nb == 0 && format->precision == 0 && format->dot == '.')
+		format->strlen--;
+	free(numero);
 }

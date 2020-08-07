@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:26:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/06 19:17:08 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/07 16:50:47 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void ft_picker(printf_s *format)
         {
             ft_formatter(format);
             ft_format_read(format);
+          
             if (*format->str != 'd' && *format->str != 'i' &&
                 *format->str != 'c' && *format->str != 's' &&
                 *format->str != 'u' && *format->str != 'x' &&
@@ -43,7 +44,7 @@ void ft_picker(printf_s *format)
         }
         else
             format->strlen = format->strlen + write(1, format->str, 1);
-        ++format->str;
+        format->str++;
     }
     va_end(format->argptr);
 }
@@ -70,20 +71,23 @@ void ft_format_read(printf_s *format)
     else if (*format->str == 'u')
         ft_display_u(format, va_arg(format->argptr, int ));
     else if (*format->str == '%')
-    {
-        ft_putchar_fd('%', 1);
-        format->strlen += 1;
-    }
+        ft_display_pct(format, 37);
+    if (ft_isdigit(*format->str))
+            format->width = ft_atoi(format->str);
 }
 // int main ()
 // {
 //     // printf("%d",printf("%u\n",-1));
 //     // printf("%d",ft_printf("%u\n",-1));
-//     printf("%10%\n");
-//     ft_printf("%10%");
-
+//     // printf("%u\n", 2147483647);
+//     // ft_printf("%u\n", 2147483647);
+//     // printf("%5%\n");
+//     ft_printf("%2%\n");
+//     printf("%2%\n");
+    
 //     return(0);
 // }
+
 // int main ()
 // {
 //     printf("%.*s", 0, "hello");
@@ -98,12 +102,12 @@ void ft_format_read(printf_s *format)
 //     ft_printf("imprimo un %%d y sigo\n");
 //     printf("%x%X%x%X%X%x\n", 1, 12, 123, 1234, 12345, 1237172676);
 //     ft_printf("%x%X%x%X%X%x\n", 1, 12, 123, 1234, 12345, 1237172676);
-//     system("leaks a.out");
 //     ft_printf("%.*d\n", 4, 2342324);
-//     printf("%.*d", 4, 2342324);
+//     printf("%.*d\n", 4, 2342324);
 //     printf("%X\n", 123456789);
-//     ft_printf("%X", 123456789);
-
-
+//     ft_printf("%X\n", 123456789);
+//     printf("%u\n", -1233);
+//     ft_printf("%u", -1233);
+//     system("leaks a.out");
 //     return(0);
 // }
