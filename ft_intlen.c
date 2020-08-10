@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 20:50:41 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/06 14:22:16 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/10 16:35:29 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,32 @@ void ft_to_hexa(printf_s *format, unsigned long number)
 
 void ft_print_number(int n, int fd)
 {
-    long r;
+    long x;
 
-    r = n;
-    if (r < 0)
-        r *= -1;
-    if (r >= 10)
+    x = n;
+    if (x < 0)
+        x *= -1;
+    if (x > 9)
     {
-        ft_putnbr_fd(r / 10, fd);
-        ft_putnbr_fd(r % 10, fd);
+        ft_print_number(x / 10, fd);
+        ft_print_number(x % 10, fd);
     }
     else
     {
-        ft_putchar_fd(r + '0', fd);
+        ft_putchar_fd(x + '0', fd);
     }
-    
+}
+
+void ft_write_unsigned(int n, int fd)
+{
+    unsigned x;
+
+    x = n;
+    if(x > 9)
+    {
+        ft_write_unsigned(x / 10, fd);
+        ft_write_unsigned(x % 10, fd);
+    }
+    else
+        ft_putchar_fd(x + '0', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:22:21 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/07 16:41:17 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/10 16:57:12 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ void	ft_display_u(printf_s *format, int nb);
 void	ft_putunbr(int n, int fd);
 void	ft_print_number(int n, int fd);
 void	ft_display_pct(printf_s *format, char c);
+void	ft_is_unsigned(unsigned n, int fd);
+void	ft_write_unsigned(int n, int fd);
+size_t	ft_ulen(long nb);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:26:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/07 16:50:47 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/10 16:58:21 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,18 @@ void ft_picker(printf_s *format)
             ft_formatter(format);
             ft_format_read(format);
           
+                          
             if (*format->str != 'd' && *format->str != 'i' &&
                 *format->str != 'c' && *format->str != 's' &&
                 *format->str != 'u' && *format->str != 'x' &&
                 *format->str != 'X' && *format->str != 'p' &&
                 *format->str != '%')
                 break;
+            
         }
         else
             format->strlen = format->strlen + write(1, format->str, 1);
-        format->str++;
+        ++format->str;
     }
     va_end(format->argptr);
 }
@@ -69,12 +71,24 @@ void ft_format_read(printf_s *format)
     else if(*format->str == 'p')
         ft_display_p(format, va_arg(format->argptr, char *));
     else if (*format->str == 'u')
-        ft_display_u(format, va_arg(format->argptr, int ));
+        ft_display_u(format, va_arg(format->argptr, int));
     else if (*format->str == '%')
         ft_display_pct(format, 37);
-    if (ft_isdigit(*format->str))
+    else if (ft_isdigit(*format->str))
             format->width = ft_atoi(format->str);
 }
+
+// int main()
+// {
+//     // printf("%d\n",printf("%u\n", -1));
+//     // printf("%d\n",ft_printf("%u\n", -1));
+//     // printf("%u\n", 4294967295u);
+//     ft_printf("%u\n", -12);
+//     // printf("%u\n", -12);
+    
+//     // printf("Il fait au moins %u\n", -8000);
+//     // ft_printf("Il fait au moins %u", -8000);
+// }
 // int main ()
 // {
 //     // printf("%d",printf("%u\n",-1));
