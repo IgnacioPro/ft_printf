@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 19:50:55 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/04 20:04:54 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 14:07:31 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,29 @@ void ft_display_x(printf_s *format, unsigned long nb)
     format->strlen = format->strlen + len;
     if (format->precision < len)
         space = format->width - len;
-    else
+    if (format->precision >= len)
         space = format->width - format->precision;
     if (format->dot == '.' && nb == 0 && format->precision == 0)
         space += 1;
     zero = format->precision - len;
+    ft_format_x(format, space, zero, nb);   
+}
+
+void ft_format_x(printf_s *format, int space, int zero, unsigned long nb)
+{
     while (space-- > 0 && format->tab != '-')
     {
-        format->strlen += write(1, (format->zero_space != '0' || (format->dot == '.' && format->precision >= 0)) ? " " : "0", 1);
+        if (format->zero_space != '0' || (format->dot == '.' && 
+            format->precision >= 0))
+                {
+                    write(1, " ", 1);
+                    ++format->strlen;
+                }
+                else
+                {
+                    write(1, "0", 1);
+                    ++format->strlen;
+                }
     }
     while (zero-- > 0)
         format->strlen = format->strlen + write(1, "0", 1);
