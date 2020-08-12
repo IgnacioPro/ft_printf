@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:22:21 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:39:32 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 14:43:40 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-typedef struct	printf_st
+typedef	struct	printf_st
 {
 	char	*str;
 	char	tab;
@@ -30,7 +30,7 @@ typedef struct	printf_st
 	int		s_pct;
 	int		len_pct;
 	int		n_d;
-
+	
 	va_list argptr;
 }				printf_s;
 
