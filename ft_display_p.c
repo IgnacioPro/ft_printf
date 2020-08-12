@@ -6,25 +6,25 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:05:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:32:04 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:21:26 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void ft_display_p(printf_s *format, char *str)
+void	ft_display_p(printf_s *format, char *str)
 {
-    unsigned long nb;
-    int space;
-    int len;
-    int plus;
-    
-    len = ft_xlen((unsigned long)str) + 2;
+	unsigned long	nb;
+	int				space;
+	int				len;
+	int				plus;
+
+	len = ft_xlen((unsigned long)str) + 2;
 	nb = len;
 	format->strlen += nb;
 	if (format->precision <= len)
 		space = format->width - len;
-	if(format->precision > len)
+	if (format->precision > len)
 		space = format->width - format->precision;
 	if (format->dot == '.' && nb == 0 && format->precision == 0)
 		++space;
@@ -34,21 +34,21 @@ void ft_display_p(printf_s *format, char *str)
 	ft_format_p(format, str, space, plus);
 }
 
-void ft_format_p(printf_s *format, char *str, int space, int plus)
+void	ft_format_p(printf_s *format, char *str, int space, int plus)
 {
 	while (space-- > 0 && format->tab != '-')
 	{
 		if (format->zero_space != '0' ||
 			(format->dot == '.' && format->precision >= 0))
-			{
-				write(1, " ", 1);
-				++format->strlen;
-			}
-			else
-			{
-				write(1, "0", 1);
-				++format->strlen;
-			}
+		{
+			write(1, " ", 1);
+			++format->strlen;
+		}
+		else
+		{
+			write(1, "0", 1);
+			++format->strlen;
+		}
 	}
 	ft_putstr_fd("0x", 1);
 	while (plus-- > 0)
