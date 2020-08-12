@@ -6,15 +6,15 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:22:21 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 16:01:57 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:30:27 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef		LIBFTPRINTF_H
+# define	LIBFTPRINTF_H
 
-# include "libft/libft.h"
-# include <stdarg.h>
+# include	"libft/libft.h"
+# include 	<stdarg.h>
 
 typedef	struct	printf_st
 {
@@ -30,7 +30,6 @@ typedef	struct	printf_st
 	int		s_pct;
 	int		len_pct;
 	int		n_d;
-	
 	va_list argptr;
 }				printf_s;
 
