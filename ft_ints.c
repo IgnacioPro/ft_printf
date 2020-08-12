@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 20:50:41 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:12:32 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 14:17:06 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ size_t ft_xlen(size_t nb)
     size_t len;
 
     len = 0;
+    
     if (nb == 0)
     {
         len++;
@@ -46,8 +47,6 @@ void ft_to_hexa(printf_s *format, unsigned long number)
     n = n < 10 ? n + '0' : n + (format->hexa == 'x' ? 87 : 55);
     ft_putchar_fd(n, 1);
 }
-
-
 
 void ft_print_number(int n, int fd)
 {

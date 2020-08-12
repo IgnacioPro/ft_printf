@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:26:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 12:26:56 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 14:16:51 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int ft_printf(const char *s, ...)
     printf_s format;
 
     format.str = (char *)s;
+    
     va_start(format.argptr, s);
     ft_picker(&format);
     va_end(format.argptr);
