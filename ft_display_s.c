@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 12:51:01 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 16:13:46 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:14:39 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_display_s(printf_s *format, char *str)
 		len -= len - format->precision;
 	if (format->precision == 0 && format->width > 0 &&
 		format->zero_space == ' ' && format->dot == '.')
-			len -= len;
+		len -= len;
 	if (format->dot == '.' && format->width == 0 && format->precision == 0)
 		len -= len;
 	if (format->width > 0)
