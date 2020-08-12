@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:05:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:27:37 by ihorcada         ###   ########.fr       */
+/*   Updated: 2020/08/12 14:32:04 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void ft_format_p(printf_s *format, char *str, int space, int plus)
 
 void ft_mem(printf_s *format, char *str)
 {
-    size_t *x;
+	size_t *x;
 
     x = (size_t *)&str;
 	format->hexa = 'x';
