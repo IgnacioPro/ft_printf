@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 19:59:04 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 16:35:05 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:39:39 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_dot(printf_s *format)
 void	ft_args(printf_s *format)
 {
 	int x;
-	
+
 	x = va_arg(format->argptr, int);
 	if (x < 0)
 	{
