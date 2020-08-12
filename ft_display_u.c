@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 12:52:52 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/10 17:09:17 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/11 10:51:16 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,10 @@ void    ft_display_u(printf_s *format, int nb)
 	int			len;
 	int			space;
 	int			zero;
-	char		*numero;
-	unsigned 	r;
+	unsigned 	unsigned_nb;
 
-	r = nb;
-	numero = ft_itoa(r);
-	len = ft_ulen(r);
-	
+	unsigned_nb = nb;
+	len = ft_ulen(unsigned_nb);
 	space = format->width - ((format->precision <= len) ? len : format->precision);
 	zero = format->precision - len;
 	space += (nb == 0 && format->precision == 0 &&
@@ -41,7 +38,6 @@ void    ft_display_u(printf_s *format, int nb)
 	if (nb == 0 && format->precision == 0 && format->dot == '.')
 		format->strlen--;
 	format->strlen += len;
-	free(numero);
 }
 
 size_t ft_ulen(long nb)

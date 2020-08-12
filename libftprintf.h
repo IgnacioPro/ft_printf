@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:22:21 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/10 16:57:12 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 12:53:32 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct printf_st
 	char	hexa;
 	int		s_pct;
 	int		len_pct;
+	int		n_d;
 
 	va_list argptr;
 } printf_s;
@@ -55,5 +56,10 @@ void	ft_display_pct(printf_s *format, char c);
 void	ft_is_unsigned(unsigned n, int fd);
 void	ft_write_unsigned(int n, int fd);
 size_t	ft_ulen(long nb);
+void	ft_precision_width(printf_s *format, int nb, int zero);
+void	ft_space_blank(printf_s *format, int space, int len, int nb);
+void	ft_zeros_spaces(printf_s *format, int nb, int space, int len, int zero);
+void	ft_format_p(printf_s *format, char *str, int space, int len, int plus);
+
 
 #endif
