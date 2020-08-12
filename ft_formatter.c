@@ -6,13 +6,13 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 19:59:04 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:34:33 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:35:05 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void ft_formatter(printf_s *format)
+void	ft_formatter(printf_s *format)
 {
 	format->width = 0;
 	format->precision = 0;
@@ -35,11 +35,11 @@ void ft_formatter(printf_s *format)
 			format->width == 0 && format->dot == ' ')
 			format->width = ft_atoi(format->str);
 		if (*format->str == '%')
-			break;
+			break ;
 	}
 }
 
-void ft_dot(printf_s *format)
+void	ft_dot(printf_s *format)
 {
 	format->dot = '.';
 	format->str++;
@@ -52,9 +52,10 @@ void ft_dot(printf_s *format)
 		format->precision = ft_atoi(format->str);
 }
 
-void ft_args(printf_s *format)
+void	ft_args(printf_s *format)
 {
 	int x;
+	
 	x = va_arg(format->argptr, int);
 	if (x < 0)
 	{

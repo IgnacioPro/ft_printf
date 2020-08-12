@@ -6,29 +6,27 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:26:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:35:52 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:36:24 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 #include <stdio.h>
 
-int ft_printf(const char *s, ...)
+int		ft_printf(const char *s, ...)
 {
 	printf_s format;
 
 	format.str = (char *)s;
-
 	va_start(format.argptr, s);
 	ft_picker(&format);
 	va_end(format.argptr);
 	return (format.strlen);
 }
 
-void ft_picker(printf_s *format)
+void	ft_picker(printf_s *format)
 {
 	format->strlen = 0;
-
 	while (*format->str)
 	{
 		if (*format->str == '%')
@@ -40,7 +38,7 @@ void ft_picker(printf_s *format)
 				*format->str != 'u' && *format->str != 'x' &&
 				*format->str != 'X' && *format->str != 'p' &&
 				*format->str != '%')
-				break;
+				break ;
 		}
 		else
 			format->strlen = format->strlen + write(1, format->str, 1);
@@ -49,7 +47,7 @@ void ft_picker(printf_s *format)
 	va_end(format->argptr);
 }
 
-void ft_format_read(printf_s *format)
+void	ft_format_read(printf_s *format)
 {
 	if (*format->str == 'i' || *format->str == 'd')
 		ft_display_d(format, va_arg(format->argptr, int));
