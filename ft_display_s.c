@@ -6,13 +6,13 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 12:51:01 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:33:03 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:13:46 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void ft_display_s(printf_s *format, char *str)
+void	ft_display_s(printf_s *format, char *str)
 {
 	int space;
 	int len;
@@ -20,7 +20,6 @@ void ft_display_s(printf_s *format, char *str)
 	if (str == NULL)
 		str = "(null)";
 	len = ft_strlen(str);
-
 	if (format->precision > 0 && format->precision < len)
 		len -= len - format->precision;
 	if (format->precision == 0 && format->width > 0 &&
@@ -37,7 +36,7 @@ void ft_display_s(printf_s *format, char *str)
 	ft_format_s(format, str, space, len);
 }
 
-void ft_format_s(printf_s *format, char *str, int space, int len)
+void	ft_format_s(printf_s *format, char *str, int space, int len)
 {
 	while (space-- > 0 && format->tab != '-')
 		format->strlen += write(1, &format->zero_space, 1);
