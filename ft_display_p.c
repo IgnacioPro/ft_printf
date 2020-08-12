@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:05:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 13:08:40 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 14:27:37 by ihorcada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void ft_display_p(printf_s *format, char *str)
 	if (str == NULL && format->dot == '.')
 		++space;
 	plus = format->precision - len + 2;
-	ft_format_p(format, str, space, len, plus);
+	ft_format_p(format, str, space, plus);
 }
 
-void ft_format_p(printf_s *format, char *str, int space, int len, int plus)
+void ft_format_p(printf_s *format, char *str, int space, int plus)
 {
 	while (space-- > 0 && format->tab != '-')
 	{

@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/27 20:36:53 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:11:00 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 14:24:02 by ihorcada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void ft_display_c(printf_s *format, int nb)
     while(zero-- > 0 && format->tab != '-')
     {
         format->strlen++;
-        ft_putchar_fd(1, "0");
+        ft_putchar_fd('0', 1);
         space = 0;
     }
     while(space-- > 0 && format->tab != '-')
