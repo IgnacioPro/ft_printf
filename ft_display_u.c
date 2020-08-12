@@ -6,15 +6,14 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 12:52:52 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 16:02:17 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:07:36 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void    ft_display_u(printf_s *format, int nb)
+void	ft_display_u(printf_s *format, int nb)
 {
-    
 	int			len;
 	int			space;
 	int			zero;
