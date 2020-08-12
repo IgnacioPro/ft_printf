@@ -6,13 +6,13 @@
 #    By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/26 18:20:38 by IgnacioHB         #+#    #+#              #
-#    Updated: 2020/08/07 16:22:49 by IgnacioHB        ###   ########.fr        #
+#    Updated: 2020/08/12 14:12:41 by IgnacioHB        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
-SRCS	= ft_intlen.c ft_formatter.c ft_display_d.c ft_printf.c ft_display_c.c ft_display_s.c ft_display_x.c ft_display_p.c ft_display_u.c ft_display_pct.c
+SRCS	= ft_ints.c ft_formatter.c ft_display_d.c ft_printf.c ft_display_c.c ft_display_s.c ft_display_x.c ft_display_p.c ft_display_u.c ft_display_pct.c
 
 OBJS	= ${SRCS:.c=.o}
 
