@@ -6,18 +6,17 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 20:50:41 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 14:35:01 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:27:30 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-size_t ft_xlen(size_t nb)
+size_t	ft_xlen(size_t nb)
 {
 	size_t len;
 
 	len = 0;
-
 	if (nb == 0)
 	{
 		len++;
@@ -36,7 +35,7 @@ size_t ft_xlen(size_t nb)
 	return (len);
 }
 
-void ft_to_hexa(printf_s *format, unsigned long number)
+void	ft_to_hexa(printf_s *format, unsigned long number)
 {
 	unsigned long n;
 
@@ -48,7 +47,7 @@ void ft_to_hexa(printf_s *format, unsigned long number)
 	ft_putchar_fd(n, 1);
 }
 
-void ft_print_number(int n, int fd)
+void	ft_print_number(int n, int fd)
 {
 	long x;
 
@@ -66,7 +65,7 @@ void ft_print_number(int n, int fd)
 	}
 }
 
-void ft_write_unsigned(int n, int fd)
+void	ft_write_unsigned(int n, int fd)
 {
 	unsigned x;
 
