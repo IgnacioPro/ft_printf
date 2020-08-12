@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 21:05:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 16:21:26 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/12 16:23:15 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,19 @@ void	ft_format_p(printf_s *format, char *str, int space, int plus)
 	ft_putstr_fd("0x", 1);
 	while (plus-- > 0)
 		format->strlen += write(1, "0", 1);
-	if(!(format->dot == '.' && str == NULL && format->precision == 0))
-		ft_mem(format,str);
+	if (!(format->dot == '.' && str == NULL && format->precision == 0))
+		ft_mem(format, str);
 	while (space-- >= 0)
 		format->strlen += write(1, " ", 1);
-	if (format->dot == '.' && str == NULL && format->precision == 0 )
+	if (format->dot == '.' && str == NULL && format->precision == 0)
 		format->strlen -= 1;
 }
 
-void ft_mem(printf_s *format, char *str)
+void	ft_mem(printf_s *format, char *str)
 {
 	size_t *x;
 
-    x = (size_t *)&str;
+	x = (size_t *)&str;
 	format->hexa = 'x';
-    ft_to_hexa(format, *x);
+	ft_to_hexa(format, *x);
 }
