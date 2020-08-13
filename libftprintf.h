@@ -6,15 +6,15 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:22:21 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 13:02:17 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:05:16 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-#include	"libft/libft.h"
-#include	<stdarg.h>
+# include "libft/libft.h"
+# include <stdarg.h>
 
 typedef	struct	s_printf
 {
