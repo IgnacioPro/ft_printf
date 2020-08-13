@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/27 20:36:53 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/12 16:28:40 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 12:01:33 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_display_c(printf_s *format, int nb)
 {
 	int space;
 	int zero;
+
+	zero = 0;
 
 	if (format->zero_space == '0' && format->width > 0)
 		zero = format->width - 1;
