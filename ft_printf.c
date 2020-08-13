@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:26:57 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 12:55:26 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:25:42 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		ft_printf(const char *s, ...)
 {
-	printf_s format;
+	t_printf format;
 
 	format.str = (char *)s;
 	va_start(format.argptr, s);
@@ -24,7 +24,7 @@ int		ft_printf(const char *s, ...)
 	return (format.strlen);
 }
 
-void	ft_picker(printf_s *format)
+void	ft_picker(t_printf *format)
 {
 	format->strlen = 0;
 	while (*format->str)
@@ -47,7 +47,7 @@ void	ft_picker(printf_s *format)
 	va_end(format->argptr);
 }
 
-void	ft_format_read(printf_s *format)
+void	ft_format_read(t_printf *format)
 {
 	if (*format->str == 'i' || *format->str == 'd')
 		ft_display_d(format, va_arg(format->argptr, int));

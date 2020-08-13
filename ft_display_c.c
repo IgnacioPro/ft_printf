@@ -6,13 +6,13 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/27 20:36:53 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 12:54:45 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:24:22 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_display_c(printf_s *format, int nb)
+void	ft_display_c(t_printf *format, int nb)
 {
 	int space;
 	int zero;

@@ -6,13 +6,13 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 12:52:52 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 12:55:22 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:25:16 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_display_u(printf_s *format, int nb)
+void	ft_display_u(t_printf *format, int nb)
 {
 	int			len;
 	int			space;
@@ -36,7 +36,7 @@ void	ft_display_u(printf_s *format, int nb)
 	ft_format_u(format, nb, len, space);
 }
 
-void	ft_format_u(printf_s *format, int nb, int len, int space)
+void	ft_format_u(t_printf *format, int nb, int len, int space)
 {
 	if (!(nb == 0 && format->precision == 0 && format->dot == '.'))
 		ft_write_unsigned(nb, 1);

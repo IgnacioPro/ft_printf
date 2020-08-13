@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 20:50:41 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 12:55:25 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:25:35 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t	ft_xlen(size_t nb)
 	return (len);
 }
 
-void	ft_to_hexa(printf_s *format, unsigned long number)
+void	ft_to_hexa(t_printf *format, unsigned long number)
 {
 	unsigned long n;
 

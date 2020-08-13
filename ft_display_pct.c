@@ -6,13 +6,13 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 16:17:32 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 12:55:19 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:25:02 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_display_pct(printf_s *format, char c)
+void	ft_display_pct(t_printf *format, char c)
 {
 	format->s_pct = format->width - 1;
 	while (format->s_pct-- > 0 && format->tab != '-')

@@ -6,13 +6,13 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 20:44:28 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 12:55:13 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:24:51 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_display_d(printf_s *format, int nb)
+void	ft_display_d(t_printf *format, int nb)
 {
 	int		len;
 	int		space;
@@ -35,7 +35,7 @@ void	ft_display_d(printf_s *format, int nb)
 	free(numero);
 }
 
-void	ft_zeros_spaces(printf_s *format, int nb, int space, int len, int zero)
+void	ft_zeros_spaces(t_printf *format, int nb, int space, int len, int zero)
 {
 	while (space-- > 0 && format->tab != '-')
 	{
@@ -55,7 +55,7 @@ void	ft_zeros_spaces(printf_s *format, int nb, int space, int len, int zero)
 	ft_space_blank(format, space, len, nb);
 }
 
-void	ft_precision_width(printf_s *format, int nb, int zero)
+void	ft_precision_width(t_printf *format, int nb, int zero)
 {
 	if (nb < 0 && format->n_d == 0)
 		write(1, "-", 1);
@@ -68,7 +68,7 @@ void	ft_precision_width(printf_s *format, int nb, int zero)
 		ft_print_number(nb, 1);
 }
 
-void	ft_space_blank(printf_s *format, int space, int len, int nb)
+void	ft_space_blank(t_printf *format, int space, int len, int nb)
 {
 	while (space-- >= 0)
 		format->strlen += write(1, " ", 1);
