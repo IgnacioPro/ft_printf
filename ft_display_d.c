@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 20:44:28 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 13:46:24 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:49:45 by ihorcada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	ft_display_d(t_printf *format, int nb)
 		format->width > 0) ? 1 : 0;
 	format->d_s -= (nb < 0 && format->precision >= len) ? 1 : 0;
 	zero = (nb < 0) ? (format->precision - len) + 1 : (format->precision - len);
-	if (nb < 0 && (format->d_s > format->precision && format->zero_space == '0'))
+	if (nb < 0 && (format->d_s > format->precision &&
+				format->zero_space == '0'))
 		write(1, "-", 1);
 	else
 		format->n_d = 0;
