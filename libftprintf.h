@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 18:22:21 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 13:31:04 by ihorcada         ###   ########.fr       */
+/*   Updated: 2020/08/13 13:46:30 by IgnacioHB        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef	struct	s_printf
 	int		s_pct;
 	int		len_pct;
 	int		n_d;
+	int		d_s;
 	va_list argptr;
 }				t_printf;
 
@@ -56,9 +57,9 @@ void			ft_is_unsigned(unsigned n, int fd);
 void			ft_write_unsigned(int n, int fd);
 size_t			ft_ulen(long nb);
 void			ft_precision_width(t_printf *format, int nb, int zero);
-void			ft_space_blank(t_printf *format, int space, int len, int nb);
+void			ft_space_blank(t_printf *format, int len, int nb);
 void			ft_zeros_spaces(t_printf *format, int nb,
-					int space, int len, int zero);
+					int len, int zero);
 void			ft_format_p(t_printf *format, char *str,
 					int space, int plus);
 void			ft_format_u(t_printf *format, int nb, int len, int space);
