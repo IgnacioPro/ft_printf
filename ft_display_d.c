@@ -6,7 +6,7 @@
 /*   By: IgnacioHB <IgnacioHB@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 20:44:28 by IgnacioHB         #+#    #+#             */
-/*   Updated: 2020/08/13 13:24:51 by IgnacioHB        ###   ########.fr       */
+/*   Updated: 2020/08/13 13:33:18 by ihorcada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_zeros_spaces(t_printf *format, int nb, int space, int len, int zero)
 {
 	while (space-- > 0 && format->tab != '-')
 	{
-		if (format->zero_space != '0' || (format->dot == '.' 
+		if (format->zero_space != '0' || (format->dot == '.'
 			&& format->precision >= 0))
 		{
 			write(1, " ", 1);
